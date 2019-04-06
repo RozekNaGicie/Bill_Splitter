@@ -1,0 +1,86 @@
+
+    @font-face {
+        font-family: 'fake_receiptregular';
+        src: url('fakereceipt-webfont.woff2') format('woff2'),
+             url('fakereceipt-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #FFDC11;
+    font-family: 'fake_receiptregular';
+    .container{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        .inputs-panel{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bill {
+            width: 330px;
+            height: 550px;
+            background-color: azure;
+            .bill-title{
+                text-align: center;
+                margin: 8px;
+            }
+            .bill-title:after{
+                content: "";
+                display: block;
+                width: 100%;
+                height: 2px;
+                border-bottom: 2px dashed black;
+            }
+            .bill-people{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 8px;
+            }
+            .bill-people:after{
+                content: "";
+                display: block;
+                min-width: 100%;
+                height: 2px;
+                border-bottom: 2px dashed black;
+            }
+            .bill-price-title{
+                text-align: center;
+            }
+            .bill-price-title:after{
+                content: "";
+                display: block;
+                min-width: 100%;
+                height: 2px;
+                border-bottom: 2px dashed black;
+            }
+            .bill-price{
+                font-size: 26px;
+                text-align: center;
+                padding: 20px;
+            }
+            .bill-person-title{
+
+            }
+            .bill-person-title:before{
+                content: "";
+                display: block;
+                min-width: 100%;
+                height: 2px;
+                border-bottom: 2px dashed black;
+            }
+            
+        }
+    }
+}
