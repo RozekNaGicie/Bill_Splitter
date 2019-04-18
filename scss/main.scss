@@ -1,86 +1,167 @@
+@font-face {
+    font-family: 'fake_receipt';
+    src: url('../assets/fakereceipt-webfont.woff2') format('woff2'),
+        url('../assets/fakereceipt-webfont.woff') format('woff');
+    // font-weight: normal;
+    // font-style: normal;
 
-    @font-face {
-        font-family: 'fake_receiptregular';
-        src: url('fakereceipt-webfont.woff2') format('woff2'),
-             url('fakereceipt-webfont.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    
-    }
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background: #FFDC11;
-    font-family: 'fake_receiptregular';
-    .container{
-        display:flex;
+    font-family: 'fake_receipt' !important;
+
+    .container {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        .inputs-panel{
-            display:flex;
+
+        .inputs-panel {
+            display: flex;
             flex-direction: column;
             align-items: center;
+
+            &>* {
+                padding: 5px;
+            }
+
+            button {
+                margin-top: 5px;
+            }
         }
+
         .bill {
-            width: 330px;
-            height: 550px;
+            width: 300px;
+            height: 400px;
             background-color: azure;
-            .bill-title{
+            margin-top: 50px;
+            border-radius: 5px;
+
+            .bill-title {
                 text-align: center;
                 margin: 8px;
+                margin-top: 30px;
             }
-            .bill-title:after{
+
+            .bill-title:after {
                 content: "";
                 display: block;
                 width: 100%;
                 height: 2px;
                 border-bottom: 2px dashed black;
             }
-            .bill-people{
+
+            .bill-people {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 8px;
+                margin-top: 10px;
+            }
+
+            .bill-people:after {
+                @extend .bill-title:after
+            }
+
+            .bill-price-title {
                 display: flex;
                 justify-content: space-between;
                 flex-direction: row;
                 flex-wrap: wrap;
                 margin: 8px;
             }
-            .bill-people:after{
-                content: "";
-                display: block;
-                min-width: 100%;
-                height: 2px;
-                border-bottom: 2px dashed black;
+
+            .bill-price-title:after {
+                @extend .bill-title:after
             }
-            .bill-price-title{
-                text-align: center;
-            }
-            .bill-price-title:after{
-                content: "";
-                display: block;
-                min-width: 100%;
-                height: 2px;
-                border-bottom: 2px dashed black;
-            }
-            .bill-price{
+
+            .bill-price {
                 font-size: 26px;
                 text-align: center;
                 padding: 20px;
+                margin: 8px;
             }
-            .bill-person-title{
 
+            .bill-person-title {
+                // text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 60px;
             }
-            .bill-person-title:before{
-                content: "";
-                display: block;
-                min-width: 100%;
-                height: 2px;
-                border-bottom: 2px dashed black;
+
+            .result-price {
+                padding: 10px;
+                font-size: 34px;
             }
-            
+
+            // .bill-person-title:before{
+            //     @extend .bill-title:after;
+            // }
+
         }
     }
+
+    .hide {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+
+    .history {
+        text-align: center;
+        margin-top: 20px;
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+
+            &>* {
+                padding: 5px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+
+        .savedRecipe {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 10px;
+
+            &>* {
+                padding: 5px;
+                cursor: pointer;
+
+            }
+
+        }
+    }
+}
+
+// klasy dodatkowe do js
+.styling {
+    margin-left: 20px;
+}
+
+.classCount {
+    border: 1px solid black;
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.remove {
+    background: yellow;
 }
